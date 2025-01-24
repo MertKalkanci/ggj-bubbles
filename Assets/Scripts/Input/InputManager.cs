@@ -6,9 +6,15 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 [DefaultExecutionOrder(-10)]
 public class InputManager : MonoBehaviour
 {
-    private Vector2 inputScreenPosition, inputScreenPositionOld;
+    [SerializeField] private LayerMask Toggle, Grab;
+    private Vector2 inputScreenPosition;
     private Finger currentFinger;
-    private static InputManager instance;
+    public static InputManager instance
+    {
+        get;
+        private set;
+    }
+
     private static Control playerControlInputs;
     public static Control.GameplayInputsActions gameplayActions => playerControlInputs.GameplayInputs;
     private bool isPressed;
@@ -45,6 +51,9 @@ public class InputManager : MonoBehaviour
             return;
         isPressed = true;
         currentFinger = finger;
+
+        inputScreenPosition = finger.screenPosition;
+        StartInteraction();
     }
     private void TouchEnd(Finger finger)
     {
@@ -55,8 +64,6 @@ public class InputManager : MonoBehaviour
         if (!Application.isMobilePlatform)
             return;
         inputScreenPosition = currentFinger.screenPosition;
-
-        inputScreenPositionOld = inputScreenPosition;
     }
     private void OnClick(InputAction.CallbackContext context)
     {
@@ -68,11 +75,23 @@ public class InputManager : MonoBehaviour
         {
             isPressed = false;
         }
+        StartInteraction();
     }
-    private void  MousePositionRecord(InputAction.CallbackContext context)
+    private void MousePositionRecord(InputAction.CallbackContext context)
     {
         if (!Application.isMobilePlatform)
             inputScreenPosition = context.ReadValue<Vector2>();
     }
+    private void StartInteraction()
+    {
+        Physics.Raycast(Camera.main.ScreenPointToRay(inputScreenPosition), out RaycastHit hit, Mathf.Infinity, Toggle);
+        if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Toggle))
+        {
+            hit.collider.gameObject.GetComponentInChildren<ToggleFan>().Toggle();
+        }
+        else if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Grab))
+        {
 
+        }
+    }
 }
