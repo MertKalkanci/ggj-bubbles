@@ -29,13 +29,15 @@ public class InputManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        playerControlInputs = new Control();
     }
 
     private void OnEnable()
     {
+        playerControlInputs = new Control();
+
         gameplayActions.Enable();
-        gameplayActions.Click.performed += OnClick;
+        gameplayActions.Click.performed += OnClickPointer;
+        gameplayActions.MousePosition.performed += MousePositionRecord;
         if (!Application.isMobilePlatform)
             return;
         EnhancedTouchSupport.Enable();
@@ -44,6 +46,17 @@ public class InputManager : MonoBehaviour
 #endif
         Touch.onFingerDown += TocuhStart;
         Touch.onFingerUp += TouchEnd;
+    }
+    private void OnDisable()
+    {
+        gameplayActions.Click.performed -= OnClickPointer;
+        gameplayActions.MousePosition.performed -= MousePositionRecord;
+
+        if (!Application.isMobilePlatform)
+            return;
+        Touch.onFingerDown -= TocuhStart;
+        Touch.onFingerUp -= TouchEnd;
+        gameplayActions.Disable();
     }
     private void TocuhStart(Finger finger)
     {
@@ -65,7 +78,7 @@ public class InputManager : MonoBehaviour
             return;
         inputScreenPosition = currentFinger.screenPosition;
     }
-    private void OnClick(InputAction.CallbackContext context)
+    private void OnClickPointer(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -84,14 +97,17 @@ public class InputManager : MonoBehaviour
     }
     private void StartInteraction()
     {
-        Physics.Raycast(Camera.main.ScreenPointToRay(inputScreenPosition), out RaycastHit hit, Mathf.Infinity, Toggle);
-        if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Toggle))
+        Ray ray = Camera.main.ScreenPointToRay(inputScreenPosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            hit.collider.gameObject.GetComponentInChildren<ToggleFan>().Toggle();
-        }
-        else if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Grab))
-        {
+            if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Toggle))
+            {
+                hit.collider.gameObject.GetComponentInParent<ToggleFan>().Toggle();
+            }
+            else if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Grab))
+            {
 
+            }
         }
     }
 }
