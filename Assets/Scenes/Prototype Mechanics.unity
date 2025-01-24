@@ -507,8 +507,9 @@ GameObject:
   - component: {fileID: 361901437}
   - component: {fileID: 361901436}
   - component: {fileID: 361901435}
+  - component: {fileID: 361901440}
   m_Layer: 3
-  m_Name: Player
+  m_Name: PlayerBaloncuk
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,6 +631,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361901440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361901434}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b2f6ea16778f443924acf6f9b4b5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &389910624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1812,7 +1825,7 @@ GameObject:
   - component: {fileID: 1267624317}
   - component: {fileID: 1267624316}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: wall z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1919,7 +1932,7 @@ GameObject:
   - component: {fileID: 1313393437}
   - component: {fileID: 1313393436}
   m_Layer: 0
-  m_Name: "\u0131nput"
+  m_Name: input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2001,7 +2014,7 @@ GameObject:
   - component: {fileID: 1313518787}
   - component: {fileID: 1313518786}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2109,7 +2122,7 @@ GameObject:
   - component: {fileID: 1354435847}
   - component: {fileID: 1354435846}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: wall -x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2496,8 +2509,8 @@ GameObject:
   - component: {fileID: 1579124292}
   - component: {fileID: 1579124291}
   - component: {fileID: 1579124290}
-  m_Layer: 0
-  m_Name: Cube (3)
+  m_Layer: 7
+  m_Name: wall -z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
