@@ -6,7 +6,7 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 [DefaultExecutionOrder(-10)]
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private LayerMask Toggle, Grab;
+    [SerializeField] private LayerMask Fan, Grab;
     public Vector2 inputScreenPosition
     {
         get;
@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
     }
     private void Awake()
     {
+        isPressed = false;
         if (instance == null)
         {
             instance = this;
@@ -110,9 +111,10 @@ public class InputManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(inputScreenPosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Toggle))
+            if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Fan))
             {
                 hit.collider.gameObject.GetComponentInParent<ToggleFan>().Toggle(); //dumb to use getcomponenetinparent ama yani jam yargılama
+                hit.collider.gameObject.GetComponentInParent<DynamicObject>().StartMovement();
             }
             else if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Grab))
             {
