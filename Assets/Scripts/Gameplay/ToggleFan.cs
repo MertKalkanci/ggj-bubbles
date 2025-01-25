@@ -3,8 +3,12 @@ using UnityEngine;
 public class ToggleFan : MonoBehaviour
 {
     [SerializeField] private StaticFan fanBehaviour;
-    public void Toggle()
+    public void EnableFan()
     {
-        fanBehaviour.enabled = !fanBehaviour.enabled;
+        fanBehaviour.enabled = true;
+    }
+    public void DisableFan()
+    {
+        fanBehaviour.enabled = false;
     }
 }
