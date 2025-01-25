@@ -3,6 +3,7 @@ using UnityEngine;
 public class DynamicObject : MonoBehaviour
 {
     [SerializeField] private float maximumVelocity = 0.1f;
+    [SerializeField] private bool movementAxisLocalAxis = false;
     [SerializeField] private Vector3 movementAxis;
     [SerializeField] private Rigidbody rb;
     private bool moveable = false;
@@ -23,6 +24,7 @@ public class DynamicObject : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        rb.linearVelocity = Vector3.zero;
         if (moveable)
         {
             if (!InputManager.instance.isPressed)
@@ -39,7 +41,11 @@ public class DynamicObject : MonoBehaviour
             newPosition = hit.point;
         }
 
-        movementVector += Vector3.Scale(newPosition - oldPosition, movementAxis);
+        if (movementAxisLocalAxis)
+            movementVector += Vector3.Scale(newPosition - oldPosition, transform.TransformDirection(movementAxis));
+        else
+            movementVector += Vector3.Scale(newPosition - oldPosition, movementAxis);
+
         rb.MovePosition(rb.position + Vector3.ClampMagnitude(movementVector, maximumVelocity));
         movementVector -= Vector3.ClampMagnitude(movementVector, maximumVelocity);
 
