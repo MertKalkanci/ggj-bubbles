@@ -301,7 +301,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   fanSpeed: 5
-  fanArea: 0.7
+  fanArea: 0.4
   fanTransformWithDirection: {fileID: 1755414123290641786}
 --- !u!114 &5238788543254890873
 MonoBehaviour:
