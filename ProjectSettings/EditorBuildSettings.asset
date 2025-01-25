@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FanPrototype.unity
+    guid: 32e035737edb4fa4fb47b6f16fdb407a
+  - enabled: 1
+    path: Assets/Scenes/GrabPrototype.unity
+    guid: 39db6e87992b62940bc1ba6634c8ed9b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
