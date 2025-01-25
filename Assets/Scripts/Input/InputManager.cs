@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
@@ -7,7 +7,11 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private LayerMask Toggle, Grab;
-    private Vector2 inputScreenPosition;
+    public Vector2 inputScreenPosition
+    {
+        get;
+        private set;
+    }
     private Finger currentFinger;
     public static InputManager instance
     {
@@ -17,7 +21,11 @@ public class InputManager : MonoBehaviour
 
     private static Control playerControlInputs;
     public static Control.GameplayInputsActions gameplayActions => playerControlInputs.GameplayInputs;
-    private bool isPressed;
+    public bool isPressed
+    {
+        get;
+        private set;
+    }
     private void Awake()
     {
         if (instance == null)
@@ -37,6 +45,7 @@ public class InputManager : MonoBehaviour
 
         gameplayActions.Enable();
         gameplayActions.Click.performed += OnClickPointer;
+        gameplayActions.Click.canceled += OnClickPointer;
         gameplayActions.MousePosition.performed += MousePositionRecord;
         if (!Application.isMobilePlatform)
             return;
@@ -50,6 +59,7 @@ public class InputManager : MonoBehaviour
     private void OnDisable()
     {
         gameplayActions.Click.performed -= OnClickPointer;
+        gameplayActions.Click.canceled -= OnClickPointer;
         gameplayActions.MousePosition.performed -= MousePositionRecord;
 
         if (!Application.isMobilePlatform)
@@ -102,11 +112,11 @@ public class InputManager : MonoBehaviour
         {
             if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Toggle))
             {
-                hit.collider.gameObject.GetComponentInParent<ToggleFan>().Toggle();
+                hit.collider.gameObject.GetComponentInParent<ToggleFan>().Toggle(); //dumb to use getcomponenetinparent ama yani jam yargılama
             }
             else if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Grab))
             {
-
+                hit.collider.gameObject.GetComponentInParent<DynamicObject>().StartMovement();
             }
         }
     }
