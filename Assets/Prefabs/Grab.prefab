@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7638867823761697103}
   - component: {fileID: 6412914473928951534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumVelocity: 0.1
+  movementAxisLocalAxis: 0
   movementAxis: {x: 1, y: 0, z: 0}
   rb: {fileID: 8105190583631635023}
 --- !u!1 &6209489876530553343
