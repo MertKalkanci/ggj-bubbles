@@ -82,6 +82,12 @@ public class InputManager : MonoBehaviour
     private void TouchEnd(Finger finger)
     {
         isPressed = false;
+
+        ToggleFan[] fans = FindObjectsOfType<ToggleFan>();
+        foreach (ToggleFan fan in fans)
+        {
+            fan.DisableFan();
+        }
     }
     private void Update()
     {
@@ -94,12 +100,18 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             isPressed = true;
+            StartInteraction();
         }
         else if(context.canceled)
         {
             isPressed = false;
+
+            ToggleFan[] fans = FindObjectsOfType<ToggleFan>();
+            foreach (ToggleFan fan in fans)
+            {
+                fan.DisableFan();
+            }
         }
-        StartInteraction();
     }
     private void MousePositionRecord(InputAction.CallbackContext context)
     {
@@ -113,7 +125,7 @@ public class InputManager : MonoBehaviour
         {
             if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Fan))
             {
-                hit.collider.gameObject.GetComponentInParent<ToggleFan>().Toggle(); //dumb to use getcomponenetinparent ama yani jam yargılama
+                hit.collider.gameObject.GetComponentInParent<ToggleFan>().EnableFan(); //dumb to use getcomponenetinparent ama yani jam yargılama
                 hit.collider.gameObject.GetComponentInParent<DynamicObject>().StartMovement();
             }
             else if (Misc.IsInLayerMask(hit.collider.gameObject.layer, Grab))
