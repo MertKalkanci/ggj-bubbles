@@ -8,13 +8,12 @@ public class Player : MonoBehaviour
     
     void Awake()
     {
-        PopLayerIndex = LayerMask.NameToLayer("Pop");
         NonPopLayerIndex = LayerMask.NameToLayer("NonPop");
     }
     
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == PopLayerIndex)
+        if (other.gameObject.layer != NonPopLayerIndex)
         {
             Console.WriteLine("on collision entered by player");
             gameObject.SetActive(false);
