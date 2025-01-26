@@ -6,14 +6,44 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Levels/LVLF_0.unity
-    guid: 32e035737edb4fa4fb47b6f16fdb407a
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/GrabPrototype.unity
-    guid: 39db6e87992b62940bc1ba6634c8ed9b
+    path: Assets/Scenes/Levels/TUT_0.unity
+    guid: 18df31211937600459693e676228273a
+  - enabled: 1
+    path: Assets/Scenes/Levels/TUT_1.unity
+    guid: e322c445c0b566c4981f5c4b2f83b0da
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLF_0.unity
+    guid: 32e035737edb4fa4fb47b6f16fdb407a
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLF_1.unity
+    guid: 0a68ea4c9aa2cde41a2ac4f58b95521a
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLF_2.unity
+    guid: 5b8916b47cf988e4da91534ebe227d4a
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLF_3.unity
+    guid: 99514d24c7bbbb94aaac184224f25267
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLF_4.unity
+    guid: 653a2bf24a8573e4c88914744596f4f7
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLM_0.unity
+    guid: 95d5dca1f4598d644a1e6c1c27ec026e
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLM_1.unity
+    guid: e51d751eb50ba1042bc5562086224977
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLM_2.unity
+    guid: 58874003c65257d40aa408c2d8851cb2
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLM_3.unity
+    guid: e05724434a8f99248917c6f781c6228c
+  - enabled: 1
+    path: Assets/Scenes/Levels/LVLM_4.unity
+    guid: 50e94c3ae4cb5b54d9b29228a0236bfd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
