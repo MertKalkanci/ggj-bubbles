@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4669264617977036279}
   - component: {fileID: 2371323972605878842}
   - component: {fileID: 9122588578597127771}
+  - component: {fileID: 3562473042725609950}
   m_Layer: 7
   m_Name: Grab Cube
   m_TagString: Untagged
@@ -106,7 +107,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0.14011353, z: 1}
   m_Center: {x: 0, y: 1.1845608, z: 0}
@@ -137,6 +138,27 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!65 &3562473042725609950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163406430587931442}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.052138366, z: 1}
+  m_Center: {x: 0, y: 1.78, z: 0}
 --- !u!1 &2893179359177869207
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,4 +358,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf3b79d5b2029e42914f6e8f0fdfb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axis: {x: 0, y: 0, z: 1}
   speed: 90
