@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/LVLF_4.unity
     guid: 653a2bf24a8573e4c88914744596f4f7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/LVLM_0.unity
     guid: 95d5dca1f4598d644a1e6c1c27ec026e
   - enabled: 1
@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/LVLM_4.unity
     guid: 50e94c3ae4cb5b54d9b29228a0236bfd
+  - enabled: 1
+    path: Assets/Scenes/FINISH.unity
+    guid: 3b2265cd3ca450f4e89b2a7fe5a5495e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

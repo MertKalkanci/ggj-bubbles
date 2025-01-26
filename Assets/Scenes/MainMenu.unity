@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1cf6f4c6e6e0518419839d3f5448dd99, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 309048119}
   - component: {fileID: 309048118}
   - component: {fileID: 309048117}
+  - component: {fileID: 309048120}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -214,10 +215,10 @@ RectTransform:
   - {fileID: 1570391774}
   m_Father: {fileID: 663176184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 82}
-  m_SizeDelta: {x: -1391.798, y: -930.701}
+  m_SizeDelta: {x: 642.202, y: 89.29901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309048117
 MonoBehaviour:
@@ -262,7 +263,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 309048118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 309048120}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309048118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +314,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309048115}
   m_CullTransparentMesh: 1
+--- !u!114 &309048120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309048115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5e2ec5abe53f0498d9514d63919206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: TUT_0
 --- !u!1 &511322269
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,10 +361,10 @@ RectTransform:
   - {fileID: 1694754467}
   m_Father: {fileID: 663176184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 772.09064, y: -402.0698}
-  m_SizeDelta: {x: -1684.882, y: -941.76}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -193.90936, y: -402.06982}
+  m_SizeDelta: {x: 349.11804, y: 78.23999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511322271
 MonoBehaviour:
@@ -535,10 +561,10 @@ RectTransform:
   - {fileID: 1732868618}
   m_Father: {fileID: 663176184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -122.340965}
-  m_SizeDelta: {x: -1391.798, y: -928.594}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -122.34097}
+  m_SizeDelta: {x: 642.202, y: 91.406006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668369525
 MonoBehaviour:
@@ -1619,7 +1645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Baloncuk ve \xF6rdek istilas\u0131 banyoda remastered definitive edition"
+  m_text: Bubbleduck
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

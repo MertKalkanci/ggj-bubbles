@@ -1354,6 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1166124914}
   - component: {fileID: 1166124915}
+  - component: {fileID: 1166124916}
   m_Layer: 0
   m_Name: NextScene
   m_TagString: Untagged
@@ -1389,6 +1390,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: LVLF_2
+--- !u!114 &1166124916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166124913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062f7c323a964044fa84eb1e76a1247d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadScene: {fileID: 1166124915}
+  skipKey: 32
 --- !u!1001 &1218750727
 PrefabInstance:
   m_ObjectHideFlags: 0
