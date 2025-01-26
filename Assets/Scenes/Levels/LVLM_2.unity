@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5e2ec5abe53f0498d9514d63919206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: FanPrototype
+  sceneName: LVLM_2
 --- !u!1001 &1419672655
 PrefabInstance:
   m_ObjectHideFlags: 0
