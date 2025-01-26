@@ -1114,6 +1114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music Singleton
       objectReference: {fileID: 0}
+    - target: {fileID: 7811581191186255778, guid: dfebab05fae81474294ac0614f35675d, type: 3}
+      propertyPath: m_Volume
+      value: 0.492
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
